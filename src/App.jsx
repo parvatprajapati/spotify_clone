@@ -22,13 +22,13 @@ function App() {
       <section className="section">
         <h2>Released This Week</h2>
         <div className="list">
-          {newReleases.map((album) => (
+          {newReleases.length>0 ? newReleases.map((album) => (
             <div key={album.id} className="card">
               <img src={album.images[0].url} alt={album.name} />
               <p>{album.name}</p>
               <p>{album.artists.map((artist) => artist.name).join(', ')}</p>
             </div>
-          ))}
+          )):"loading..."}
         </div>
       </section>
 
